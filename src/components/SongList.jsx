@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import uuid from 'react-uuid';
 import NameForm from './NameForm';
 
@@ -12,12 +12,18 @@ const SongList = () => {
         {title:'Lanre', id:3}
     ]);
 
-
-
+    const [age, setAge]=useState(20);
 
     const addSong=(title)=>{
         setSongs([...songs, { title: title, id: uuid() }]);
     }
+
+
+
+
+    useEffect(()=>{
+        console.log('useEffect Hook', songs)
+    })
   return (
     <>
             <div>
