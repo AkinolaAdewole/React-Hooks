@@ -23,7 +23,7 @@ const SongList = () => {
 
     useEffect(()=>{
         console.log('useEffect Hook', songs)
-    })
+    }[songs]);
   return (
     <>
             <div>
@@ -34,6 +34,8 @@ const SongList = () => {
                 </ul>
                 {/* <button onClick={addSong}>Add Song</button> */}
                 <NameForm addSong={addSong}/>
+
+                <button onClick={()=>setAge(age + 1)}>Age:{age}</button>
             </div>
     </>
   )
