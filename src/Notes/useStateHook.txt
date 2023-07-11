@@ -1,0 +1,27 @@
+useState Hook:
+The useState hook allows you to add state to a functional component. 
+It returns an array with two elements: the current state value and a function to update that state. 
+
+You can initialize the state with an initial value when calling useState. 
+
+Here's an example:
+
+import React, { useState } from 'react';
+
+const ExampleComponent = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+In the above code, the useState hook is used to add a count state variable to the component's state. The initial value of count is set to 0. 
+The setCount function is used to update the count state when the button is clicked.

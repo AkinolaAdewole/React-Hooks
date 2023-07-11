@@ -1,0 +1,40 @@
+useEffect Hook:
+The useEffect hook enables you to perform side effects in functional components, such as fetching data, subscribing to events, or manipulating the DOM.
+ It takes two arguments: a function that contains the side effect code, and an optional array of dependencies. 
+Here's an example:
+
+import React, { useState, useEffect } from 'react';
+
+const ExampleComponent = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Fetch data from an API
+    fetch('https://api.example.com/data')
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      });
+
+    // Clean-up function (optional)
+    return () => {
+      // Clean up any resources if needed
+    };
+  }, []); // Empty dependency array to run the effect only once
+
+  return (
+    <div>
+      {data ? (
+        <p>Data: {data}</p>
+      ) : (
+        <p>Loading data...</p>
+      )}
+    </div>
+  );
+};
+
+In the above code, the useEffect hook is used to fetch data from an API when the component mounts. 
+It runs only once because the dependency array is empty. The fetched data is stored in the data state variable using the setData function. 
+The component renders different messages based on whether the data has been loaded or is still loading.
+
+The optional clean-up function in useEffect can be used to clean up any resources or subscriptions before the component unmounts.

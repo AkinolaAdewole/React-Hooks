@@ -23,7 +23,7 @@ const SongList = () => {
 
     useEffect(()=>{
         console.log('useEffect Hook', songs)
-    }[songs]);
+    },[songs]);
   return (
     <>
             <div>
